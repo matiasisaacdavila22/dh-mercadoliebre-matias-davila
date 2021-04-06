@@ -11,11 +11,9 @@
   width: 97%;
   margin: 20px;
 }
-.main{
-  width: 100%;
-}
+
 .header{
-  background-color: #eac926;
+  background-color: #EAC926;;
   padding: 20px;
   padding-bottom: 80px;
   position: fixed;
@@ -38,6 +36,7 @@
   text-align: center;
   font-size: 18px;
   margin: auto;
+  animation: aparecer 500ms 1000ms 1 alternate forwards;
 }
 #banner{
   
@@ -70,7 +69,9 @@
   padding: 5px 0;
   font-size: 17px;
 }
-
+.ultimaVisita, .ofertas{
+  justify-content: center;
+}
 
 .main article{
   position: relative;
@@ -88,7 +89,7 @@
   }
 
 .main article:hover p.descripcion{
-    display: block;
+    font-size: 1rem;
 }
 
 .caja{
@@ -130,9 +131,10 @@
 }
 
 .descripcion {
-  display: none;
-  transition: all450ms;
+ font-size: 0;
+  transition: all 450ms;
 }
+
 
 .footer {
   display: flex;
@@ -225,10 +227,6 @@
   background-color: #f0e220;
  }
 
-.main{
-  width: 100%;
-}
-
 .form-login{
   width: 100%;
   padding: 8px;
@@ -258,6 +256,18 @@
 .button-login:hover{
   background-color: #053988;
   }
+
+  @keyframes aparecer {
+    0%{
+
+      transform: rotate(180deg);
+    }
+  100%{
+      transform: rotate(0deg);
+    }
+  }
+
+  
 
 @media (min-width:768px){
 
@@ -311,6 +321,7 @@
 
 @media (min-width:1200px){
 
+
   .header{
     padding-bottom: 20px;
   } 
@@ -347,15 +358,17 @@
     font-size: 19px;
   }
 
+  .titulares{
+    margin-left: 100px;
+  }
+
   .article{
     width: 20%;
-  }
+    justify-content: center;
+     }
 
-  .footer {
+  .items {
     display: flex;
-    flex-flow:wrap;
-    margin: 10px;
-  }
-
+    }
 
 }
