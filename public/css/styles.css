@@ -13,7 +13,7 @@
 }
 
 .header{
-  background-color: #EAC926;;
+  background-color: #EAC926;
   padding: 20px;
   padding-bottom: 100px;
   padding-top: 30px;
@@ -248,9 +248,10 @@
 }
 
 .button-submit{
-  background-color: #39b54a;
+  background-color: #4bdf5f;
   border: none;
-  font-size: 20px;
+
+  font-size: 20px;margin-right: 20px;
   color: #FFF;
   padding: 5px 10px;
   border-radius: 5px;
@@ -258,7 +259,7 @@
 }
 
 .button-submit:hover{
-  background-color: #1ab32e;
+  background-color: #037a13;
  }
 
 .button-reset{
@@ -272,7 +273,7 @@
 }
 
 .button-reset:hover{
-  background-color: #f0e220;
+  background-color: #EAC926;
  }
 
  .main-login{

@@ -19,7 +19,7 @@
             <a href="/"><img src="images/logo-mercado-liebre.svg" class="logo"></a>
             <form action="#" class="search">
                 <div class="control-form">
-                    <input type="text" name="search" placeholder="Buscar productos, marcas y mas" class="control">
+                    <input type="text" name="search" placeholder="Buscar productos, marcas y mas" class="control" minlength="3" maxlength="30">
                 </div>
                 <button type="submit" class="button-search"><i class="fas fa-search" icon></i></button>
             </form>
@@ -52,11 +52,11 @@
         <form action="/registro" method="POST" class="form-register">
             <div class="control-form">
                 <label for="" class="titulo">Nombre y Apellido</label>
-                <input type="text" name="name" placeholder="nombre apellido" class="control" required>
+                <input type="text" name="name" placeholder="nombre apellido" class="control" required minlength="3" maxlength="30">
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Nombre de Usuario</label>
-                <input type="text" name="userName" placeholder="usuario" class="control" required>
+                <input type="text" name="userName" placeholder="usuario" class="control" required minlength="3" maxlength="30">
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Feche de Nacimiento</label>
@@ -64,7 +64,7 @@
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Domicilio</label>
-                <input type="text" name="domicilio" placeholder="rauch 1019" class="control" required>
+                <input type="text" name="domicilio" placeholder="rauch 1019" class="control" required maxlength="30">
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Perfil de Usuario</label>
@@ -85,11 +85,11 @@
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Password</label>
-                <input type="password" placeholder="******" class="control" minlength="8" required>
+                <input type="password" placeholder="Password" class="control" minlength="8" maxlength="30" required>
             </div>
             <div class="control-form">
-                <label for="" >Confirma tu Password</label>
-                <input type="rePassword" placeholder="******" class="control" minlength="8" required>
+                <label for="" >El password debe tener un largo superior a 8 caracteres</label>
+                <input type="password" placeholder="Confirma tu Password" class="control" minlength="8" maxlength="30" required>
             </div>
             <button type="submit" class="button-submit">Enviar</button>
             <button type="reset" class="button-reset">Borrar</button>
