@@ -21,6 +21,7 @@
                 <div class="control-form">
                     <input type="text" name="search" placeholder="Buscar productos, marcas y mas" class="control">
                 </div>
+                <button type="submit" class="button-search"><i class="fas fa-search" icon></i></button>
             </form>
             <h2 class="copy-header"><i class="fas fa-hand-holding-usd"></i>Compra en cuotas y sin tarjetas de credito
             </h2>
@@ -51,19 +52,19 @@
         <form action="/registro" method="POST" class="form-register">
             <div class="control-form">
                 <label for="" class="titulo">Nombre y Apellido</label>
-                <input type="text" name="name" placeholder="nombre apellido" class="control">
+                <input type="text" name="name" placeholder="nombre apellido" class="control" required>
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Nombre de Usuario</label>
-                <input type="text" name="userName" placeholder="usuario" class="control">
+                <input type="text" name="userName" placeholder="usuario" class="control" required>
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Feche de Nacimiento</label>
-                <input type="date" name="fecha">
+                <input type="date" name="fecha" required>
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Domicilio</label>
-                <input type="text" name="domicilio" placeholder="rauch 1019" class="control">
+                <input type="text" name="domicilio" placeholder="rauch 1019" class="control" required>
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Perfil de Usuario</label>
@@ -84,11 +85,11 @@
             </div>
             <div class="control-form">
                 <label for="" class="titulo">Password</label>
-                <input type="password" placeholder="******" class="control" minlength="8">
+                <input type="password" placeholder="******" class="control" minlength="8" required>
             </div>
             <div class="control-form">
                 <label for="" >Confirma tu Password</label>
-                <input type="rePassword" placeholder="******" class="control">
+                <input type="rePassword" placeholder="******" class="control" minlength="8" required>
             </div>
             <button type="submit" class="button-submit">Enviar</button>
             <button type="reset" class="button-reset">Borrar</button>
