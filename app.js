@@ -1,26 +1,22 @@
 const express = require('express');
+
+let rutasMain = require('./routes/main');
+let rutasProductos = require('./routes/productos.js');
+
 const app = express();
+
+app.set('view engine', 'ejs');
 
 const path = require('path');
 const puerto = process.env.PORT ;
  
+app.use(express.static('./public'));
 
-const publicPath = path.resolve(__dirname,'./public');
-app.use(express.static(publicPath));
+app.use('/', rutasMain);
+app.use('/register', rutasMain);
+app.use('/login', rutasMain);
 
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname,'./views/home.html'));
-  })
-
-  app.get('/registro', (req, res) => {
-    res.sendFile(path.join(__dirname,'./views/register.html'));
-  })
-  app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname,'./views/login.html'));
-  })
-
-  app.listen(puerto || 3000, function() {
+app.listen(puerto || 3000, function() {
     console.log("Servidor corriendo en el puerto 3000");
 });
 
