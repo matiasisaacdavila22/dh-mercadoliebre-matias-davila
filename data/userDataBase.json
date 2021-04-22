@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "matias",
+        "lastName": "davila",
+        "password": "admin123",
+        "role": "admin",
+        "image": "img-cafetera-moulinex.jpg"
+    },
+    {
+        "name": "Matias Davila",
+        "userName": "carmnen",
+        "fecha": "2021-04-21",
+        "domicilio": "racuh 1019",
+        "password": "fdsafdsafdsa",
+        "role": "admin",
+        "image": "img-cafetera-moulinex.jpg"
+    },
+    {
+        "name": "juan",
+        "userName": "jamiel",
+        "fecha": "2021-05-06",
+        "domicilio": "racuh 1019",
+        "password": "fdsafdsa",
+        "role": "admin",
+        "image": "img-cafetera-moulinex.jpg"
+    }
+]
