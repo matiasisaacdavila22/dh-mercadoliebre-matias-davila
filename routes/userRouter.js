@@ -14,5 +14,8 @@ router.get('/list', userController.list);
 
 router.get('/search', userController.search); 
 
+router.get('/edit/:id', userController.edit);
+router.put('/edit', userController.update);
+
 
 module.exports = router;

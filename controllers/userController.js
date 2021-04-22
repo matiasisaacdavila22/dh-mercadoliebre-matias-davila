@@ -44,11 +44,22 @@ const controller = {
 	
 	// Update - Form to edit
 	edit: (req, res) => {
-        res.send('form de edit user');
+		let idUser = req.params.id;
+		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
+		let userSearch = tareas.find(user => user.id == idUser);
+	    res.render('userEdit',{userSearch: userSearch});
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		res.send('update user');
+		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
+		tareas.forEach(element => {
+			if(element.id == req.body.id){
+				element.name = req.body.name;
+				element.lastName = req.body-lastName;
+			}
+						
+		});
+		res.render('login');
 	},
 
 	// Delete - Delete one product from DB
