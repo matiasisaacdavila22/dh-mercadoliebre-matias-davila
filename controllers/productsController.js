@@ -6,7 +6,8 @@ const controller = {
     },
     	// Detail - Detail from one product
 	detail: (req, res) => {
-		res.send('Detail de product');
+		let product = products.find(product => product.id == req.params.id);
+		res.render('detailProduct', {product:product});
 	},
 
 	// Create - Form to create

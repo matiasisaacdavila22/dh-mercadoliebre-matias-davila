@@ -219,10 +219,14 @@
    justify-content: center;
 }
 
-.form-register{
+.container{
   width: 100%;
   padding: 20px 15px;
   background-color: #ebebeb;
+}
+
+.form-delete{
+  padding-top: 16px;
 }
 
 .control-form{
@@ -263,7 +267,7 @@
  }
 
 .button-reset{
-  background-color: #bbfc42;
+  background-color: #fc6d42;
   border: none;
   font-size: 20px;
   color: #FFF;
@@ -273,7 +277,7 @@
 }
 
 .button-reset:hover{
-  background-color: #EAC926;
+  background-color: #bd2612;
  }
 
  .main-login{
@@ -416,14 +420,18 @@
        justify-content: center;
       margin-top: 20px;
     }
-
-    .form-register{
+    .conatiner{
       width: 80%;
-      justify-content: center;
       border: #8a8787 solid 1px;
       border-radius: 3%;
       padding: 20px 15px;
       background-color: #ebebeb;
+    }
+
+    .form-register{
+    
+      justify-content: center;
+
     }
 
  }

@@ -1,30 +1,34 @@
 [
     {
-        "id": 1,
-        "name": "matias",
-        "lastName": "davila",
-        "password": "admin123",
-        "role": "admin",
-        "image": "img-cafetera-moulinex.jpg"
-    },
-    {   
-        "id": 2,
-        "name": "Matias Davila",
-        "userName": "carmnen",
+        "id": 4,
+        "name": "thomas isaac davila",
+        "userName": "tomate",
         "fecha": "2021-04-21",
         "domicilio": "racuh 1019",
-        "password": "fdsafdsafdsa",
-        "role": "admin",
-        "image": "img-cafetera-moulinex.jpg"
+        "password": "admin123",
+        "perfil": "comprar",
+        "categorias": [
+            "electro",
+            "moda",
+            "hogar",
+            "jugueteria",
+            "vidaSana"
+        ],
+        "file": "20180119_191744.jpg"
     },
     {
-        "id": 3,
-        "name": "juan",
-        "userName": "jamiel",
-        "fecha": "2021-05-06",
-        "domicilio": "racuh 1019",
-        "password": "fdsafdsa",
-        "role": "admin",
-        "image": "img-cafetera-moulinex.jpg"
+        "id": 1,
+        "name": "Matias Davila",
+        "userName": "marte",
+        "fecha": "2021-04-22",
+        "domicilio": "rauch 1019",
+        "password": "123121fdsa",
+        "perfil": "vender",
+        "categorias": [
+            "electro",
+            "hogar",
+            "jugueteria"
+        ],
+        "file": "IMG_20200418_160834773.jpg"
     }
 ]

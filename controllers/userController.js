@@ -13,8 +13,9 @@ const controller = {
 	    fecha : req.body.fecha,
 	    domicilio : req.body.domicilio,
 		password : req.body.password,
-		role : "admin",
-		image : "img-cafetera-moulinex.jpg"
+		perfil : req.body.perfil,
+		categorias: req.body.categorias,
+		file : req.body.photo
 		}	
 		
 	    let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
@@ -26,7 +27,7 @@ const controller = {
 				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
 			}
 			console.log('El archivo fue guardado correctamente');
-			res.redirect('/login');
+			res.redirect('/user/login');
 		});
 	},
 	login: (req, res) => {
@@ -51,20 +52,46 @@ const controller = {
 	},
 	// Update - Method to update
 	update: (req, res) => {
-		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		tareas.forEach(element => {
-			if(element.id == req.body.id){
-				element.name = req.body.name;
-				element.lastName = req.body-lastName;
-			}
-						
+	    let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
+		let TareasFilter = tareas.filter(user => {
+			 return	user.id != req.body.id;					
 		});
-		res.render('login');
+		let userUpdate = {
+			id: req.body.id,
+			name : req.body.name,
+			userName : req.body.userName,
+			fecha : req.body.fecha,
+			domicilio : req.body.domicilio,
+			password : req.body.password,
+			perfil : req.body.perfil,
+			categorias: req.body.categorias,
+			file : req.body.photo
+			}	
+		   TareasFilter.push(userUpdate);
+           TareasUpdate = JSON.stringify(TareasFilter);
+		fs.writeFile('./data/userDataBase.json', TareasUpdate, function(err){
+			if(err){
+				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
+			}
+			console.log('El archivo fue guardado correctamente');
+			res.redirect('/');
+		});
+
 	},
 
-	// Delete - Delete one product from DB
-	destroy : (req, res) => {
-		res.send('delete user');
+	delete : (req, res) => {
+		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
+		let TareasFilter = tareas.filter(user => {
+			 return	user.id != req.params.id;					
+		});
+		TareasUpdate = JSON.stringify(TareasFilter);
+		fs.writeFile('./data/userDataBase.json', TareasUpdate, function(err){
+			if(err){
+				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
+			}
+			console.log('El archivo fue guardado correctamente');
+			res.redirect('/');
+		});
 	}
 };
 
