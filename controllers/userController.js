@@ -31,7 +31,6 @@ const controller = {
 		});
 	},
 	login: (req, res) => {
-		console.log('login cabron')
 		res.render('login');
 	},
 
@@ -53,7 +52,7 @@ const controller = {
 	// Update - Method to update
 	update: (req, res) => {
 	    let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		let TareasFilter = tareas.filter(user => {
+		tareas = tareas.filter(user => {
 			 return	user.id != req.body.id;					
 		});
 		let userUpdate = {
@@ -67,9 +66,9 @@ const controller = {
 			categorias: req.body.categorias,
 			file : req.body.photo
 			}	
-		   TareasFilter.push(userUpdate);
-           TareasUpdate = JSON.stringify(TareasFilter);
-		fs.writeFile('./data/userDataBase.json', TareasUpdate, function(err){
+		   tareas.push(userUpdate);
+           let tareaUpdate = JSON.stringify(tareas);
+		fs.writeFile('./data/userDataBase.json', tareaUpdate, function(err){
 			if(err){
 				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
 			}
@@ -81,10 +80,10 @@ const controller = {
 
 	delete : (req, res) => {
 		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		let TareasFilter = tareas.filter(user => {
+		tareas = tareas.filter(user => {
 			 return	user.id != req.params.id;					
 		});
-		TareasUpdate = JSON.stringify(TareasFilter);
+		let TareasUpdate = JSON.stringify(tareas);
 		fs.writeFile('./data/userDataBase.json', TareasUpdate, function(err){
 			if(err){
 				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);

@@ -17,18 +17,31 @@
         "file": "20180119_191744.jpg"
     },
     {
-        "id": 1,
-        "name": "Matias Davila",
-        "userName": "marte",
-        "fecha": "2021-04-22",
-        "domicilio": "rauch 1019",
-        "password": "123121fdsa",
-        "perfil": "vender",
+        "id": 2,
+        "name": "karina dela",
+        "userName": "kadeta",
+        "fecha": "2021-04-09",
+        "domicilio": "manchare2021",
+        "password": "dasfsdfdas",
+        "perfil": "comprar",
         "categorias": [
             "electro",
-            "hogar",
-            "jugueteria"
+            "vidaSana"
         ],
-        "file": "IMG_20200418_160834773.jpg"
+        "file": "20180119_191744.jpg"
+    },
+    {
+        "id": 1,
+        "name": "karina dela",
+        "userName": "kadeta",
+        "fecha": "2021-04-09",
+        "domicilio": "manchare2021",
+        "password": "dasfsdfdas",
+        "perfil": "comprar",
+        "categorias": [
+            "electro",
+            "vidaSana"
+        ],
+        "file": "20180119_191744.jpg"
     }
 ]

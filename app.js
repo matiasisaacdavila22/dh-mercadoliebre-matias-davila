@@ -15,9 +15,14 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
+
 app.use('/', rutasMain);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
+
+app.use((req, res, next) => {
+    res.status(404).render('Page_notFound');
+})
 
 app.listen(puerto || 3000, function() {
     console.log("Servidor corriendo en el puerto 3000");
