@@ -1,29 +1,30 @@
 [
  {
-  "id": 1,
-  "name": "Cafetera Moulinex Dolce Gusto Edited",
-  "price": 100,
-  "discount": 50,
-  "category": "visited",
-  "description": "Cafetera Dolce Gusto Lumio. La cafetera Dolce Gusto Lumio es de variedad automática que ha llegado con un diseño radical al que nos tenía acostumbrados Dolce Gusto.En este post te contamos todo lo que necesitas saber sobre ella, desde sus características técnicas hasta la calidad de las cápsulas o price.",
-  "image": "img-cafetera-moulinex.jpg"
+  "image": "product-1620855481386.jpg",
+  "category": "2",
+  "name": "pantalla led 70\"",
+  "description": "vdsafdsaf",
+  "stock": "45",
+  "price": "444",
+  "id": "1"
  },
  {
   "id": 2,
   "name": "Macbook Pro 2022",
   "price": 500,
   "discount": 3,
-  "category": "in-sale",
+  "category": "2",
   "description": "Macbook Pro 2019 Mpxq2ll/a Intel Core i5 2.3 Ghz 8gb RAM 128gb SSD Pantalla 13.3\" Retina Apple Nueva Original. Importada de USA. Se entrega con la factura de compra para contar con la garantía del fabricante",
-  "image": "img-macbook-pro-2019.jpg"
+  "image": "img-macbook-pro-2019.jpg",
+  "stock": 2
  },
  {
-  "id": 3,
+  "category": "3",
   "name": "Samsung Galaxy S10",
-  "price": 72999,
-  "discount": 25,
-  "category": "in-sale",
   "description": "Experiencia visual excepcional. Mirá tus series y películas favoritas con la mejor definición.Tendrás colores brillantes y detalles precisos en todos tus contenidos.Disfrutá aún más del mejor entretenimiento gracias a su vasta pantalla y ángulos de visión amplios.",
+  "stock": "2",
+  "price": "72999",
+  "id": "3",
   "image": "img-samsung-galaxy-s10.jpg"
  },
  {
@@ -33,16 +34,17 @@
   "price": 47900,
   "discount": 10,
   "image": "img-heladera-whirpool.jpg",
-  "category": "in-sale"
+  "category": "1",
+  "stock": 2
  },
  {
-  "id": 5,
-  "name": "Nikon Reflex D3500 - Kit",
-  "description": "Incluye la cámara D3500, el objetivo zoom AF-P DX NIKKOR 18-55mm y el superteleobjetivo zoom compacto AF-P DX NIKKOR 70-300mm. Ambos objetivos enfocan de forma rápida y silenciosa, lo que resulta ideal para grabar metraje de vídeo sin que se escuche apenas el ruido del accionamiento.",
-  "price": 53000,
-  "discount": 20,
-  "image": "img-camara-nikon.jpg",
-  "category": "in-sale"
+  "category": "1",
+  "name": "camara fothos full",
+  "description": "fdsafdsaf",
+  "stock": "43",
+  "price": "450",
+  "id": "5",
+  "image": "product-1620855239311.jpg"
  },
  {
   "id": 6,
@@ -51,7 +53,8 @@
   "price": 20999,
   "discount": 12,
   "image": "img-aire-acondicionado.jpg",
-  "category": "in-sale"
+  "category": "3",
+  "stock": 2
  },
  {
   "id": 7,
@@ -60,7 +63,8 @@
   "price": 36700,
   "discount": 5,
   "image": "img-laptop-lenovo.jpg",
-  "category": "in-sale"
+  "category": "1",
+  "stock": 2
  },
  {
   "id": 8,
@@ -69,7 +73,8 @@
   "price": 148000,
   "discount": 2,
   "image": "img-iphone-11.jpg",
-  "category": "in-sale"
+  "category": "2",
+  "stock": 2
  },
  {
   "id": 9,
@@ -78,7 +83,8 @@
   "price": 11399,
   "discount": 0,
   "image": "img-apple-magic-keyboard.jpg",
-  "category": "visited"
+  "category": "3",
+  "stock": 2
  },
  {
   "id": 10,
@@ -87,7 +93,8 @@
   "price": 1200,
   "discount": 10,
   "image": "img-mouse-logitech.jpg",
-  "category": "visited"
+  "category": "1",
+  "stock": 2
  },
  {
   "id": 11,
@@ -96,7 +103,8 @@
   "price": 29990,
   "discount": 12,
   "image": "img-parlante-bose.jpg",
-  "category": "visited"
+  "category": "2",
+  "stock": 2
  },
  {
   "id": 12,
@@ -105,7 +113,8 @@
   "price": 32990,
   "discount": 0,
   "image": "img-home-theater-sony.jpg",
-  "category": "visited"
+  "category": "3",
+  "stock": 2
  },
  {
   "id": 13,
@@ -114,7 +123,8 @@
   "price": 34990,
   "discount": 0,
   "image": "img-tv-samsung-smart.jpg",
-  "category": "visited"
+  "category": "1",
+  "stock": 2
  },
  {
   "id": 14,
@@ -123,7 +133,8 @@
   "price": 10999,
   "discount": 5,
   "image": "img-sony-blueray.jpg",
-  "category": "visited"
+  "category": "2",
+  "stock": 2
  },
  {
   "id": 15,
@@ -132,15 +143,17 @@
   "price": 15979,
   "discount": 12,
   "image": "img-bicicleta-fierce.jpg",
-  "category": "visited"
+  "category": "3",
+  "stock": 2
  },
  {
   "id": 16,
   "name": "Sony Srs-xb12 Parlante Bluetooth Portátil",
   "price": 4699,
   "discount": 5,
-  "category": "in-sale",
+  "category": "1",
   "description": "Deja que la música dance cobre vida con EXTRA BASS™ Anima el ambiente con EXTRA BASS™1. Un radiador pasivo trabaja con el parlante monoaural para potenciar los tonos bajos y mejorar los graves, a pesar del tamaño compacto. ",
-  "image": "img-parlante-sony.jpg"
+  "image": "img-parlante-sony.jpg",
+  "stock": 2
  }
 ]

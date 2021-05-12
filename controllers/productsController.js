@@ -1,37 +1,57 @@
-let products = require('../data/productsDataBase.json')
+const { render } = require('ejs');
+const jsonDatabase = require('../model/jsonDataBase');
+const model = jsonDatabase('productsDataBase');
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-    index: (req, res) => {
-        return products;
-    },
-    	// Detail - Detail from one product
+     
+	index: (req, res) => {
+		let products = model.all();
+		return res.render('product/listProducts', {products});
+	},
+
+	// Detail - Detail from one product
 	detail: (req, res) => {
-		let product = products.find(product => product.id == req.params.id);
-		res.render('detailProduct', {product:product});
+		let product = model.find(req.params.id);
+		return res.render('product/detailProduct', {product: product});
 	},
 
 	// Create - Form to create
 	create: (req, res) => {
-		res.send('create new product');
+		res.render('product/createProduct');
 	},
 	
 	// Create -  Method to store
 	store: (req, res) => {
-		res.send('guardar new product');
+		if(req.image){
+			let productNew = req.body;  
+			   model.create(productNew);
+			   res.redirect('/products');
+		 }else{
+			return res.render('product/createProduct');
+		 }
 	},
 
-	// Update - Form to edit
 	edit: (req, res) => {
-        res.send('form de edit product');
-	},
-	// Update - Method to update
-	update: (req, res) => {
-		res.send('update product');
+		let product = model.find(req.params.id);
+		return res.render('product/editProduct', {'product':product});
 	},
 
-	// Delete - Delete one product from DB
+	update: (req, res) => {
+		console.log(req.body)
+		let productUpdate = req.body;
+        productUpdate.id = req.params.id;
+        if(!productUpdate.image){
+            productUpdate.image = model.find(req.params.id).image;
+        }
+        console.log(productUpdate);
+        model.update(productUpdate);
+        return res.redirect('/product');
+	},
+
 	destroy : (req, res) => {
-		res.send('delete product');
+		// Do the magic
 	}
 };
 

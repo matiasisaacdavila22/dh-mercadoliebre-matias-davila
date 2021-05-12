@@ -1,8 +1,9 @@
-let fs = require('fs');
+const jsonDatabase = require('../model/jsonDataBase');
+const model = jsonDatabase('userDataBase');
 
 const controller = {
     register: (req, res) => {
-        return res.render('register');
+        return res.render('user/register');
     },
 
 	create: (req, res) => {
@@ -18,20 +19,12 @@ const controller = {
 		file : req.body.photo
 		}	
 		
-	    let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-	    tareas.push(userNew);
-		
-		let tareasNuevas = JSON.stringify(tareas);
-		fs.writeFile('./data/userDataBase.json', tareasNuevas, function(err){
-			if(err){
-				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
-			}
-			console.log('El archivo fue guardado correctamente');
-			res.redirect('/user/login');
-		});
+		model.create(userNew);
+		return res.render('user/login');
+
 	},
 	login: (req, res) => {
-		res.render('login');
+		res.render('user/login');
 	},
 
 	list: (req, res) => {
