@@ -20,12 +20,14 @@ app.use('/', rutasMain);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
 
+app.use((req, res, next) => {
+    res.status(404).render('Page_notFound');
+})
+
 app.listen(puerto || 3000, function() {
     console.log("Servidor corriendo en el puerto 3000");
 });
 
-app.use((req, res, next) => {
-    res.status(404).render('Page_notFound');
-})
+
 
 
