@@ -1,6 +1,7 @@
 const { render } = require('ejs');
-const jsonDatabaseU = require('../model/jsonDataBaseU');
-const model = jsonDatabaseU('userDataBase');
+let jsonDatabaseP = require('../model/jsonDatabase');
+let model = jsonDatabaseP('productsDataBase')
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
