@@ -1,89 +1,53 @@
-const jsonDatabase = require('../model/jsonDataBase');
-const model = jsonDatabase('userDataBase');
+const { render } = require('ejs');
+let jsonDatabaseP = require('../model/jsonDatabase');
+let model = jsonDatabaseP('productsDataBase')
+
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 const controller = {
-    register: (req, res) => {
+    create: (req, res) => {
         return res.render('user/register');
     },
 
-	create: (req, res) => {
+	store: (req, res) => {
 
-		let userNew = {
-		name : req.body.name,
-	    userName : req.body.userName,
-	    fecha : req.body.fecha,
-	    domicilio : req.body.domicilio,
-		password : req.body.password,
-		perfil : req.body.perfil,
-		categorias: req.body.categorias,
-		file : req.body.photo
-		}	
-		
+		let userNew = req.body;	
 		model.create(userNew);
 		return res.render('user/login');
 
 	},
 	login: (req, res) => {
-		res.render('user/login');
+		return	res.render('user/login');
 	},
 
 	list: (req, res) => {
-		res.send('list de user');
+		return	res.send('list de user');
 	},
 
 	search: (req, res) => {
-		res.send('search de user');
+		return res.send('search de user');
 	},
 	
-	// Update - Form to edit
+	
 	edit: (req, res) => {
-		let idUser = req.params.id;
-		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		let userSearch = tareas.find(user => user.id == idUser);
-	    res.render('userEdit',{userSearch: userSearch});
+		let userSearch = model.find(req.params.id);
+	   return res.render('userEdit',{userSearch: userSearch});
 	},
-	// Update - Method to update
-	update: (req, res) => {
-	    let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		tareas = tareas.filter(user => {
-			 return	user.id != req.body.id;					
-		});
-		let userUpdate = {
-			id: req.body.id,
-			name : req.body.name,
-			userName : req.body.userName,
-			fecha : req.body.fecha,
-			domicilio : req.body.domicilio,
-			password : req.body.password,
-			perfil : req.body.perfil,
-			categorias: req.body.categorias,
-			file : req.body.photo
-			}	
-		   tareas.push(userUpdate);
-           let tareaUpdate = JSON.stringify(tareas);
-		fs.writeFile('./data/userDataBase.json', tareaUpdate, function(err){
-			if(err){
-				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
-			}
-			console.log('El archivo fue guardado correctamente');
-			res.redirect('/');
-		});
 
+	update: (req, res) => {
+
+		let userUpdate = req.body;
+        userUpdate.id = req.params.id;
+        if(!userUpdate.image){
+            userUpdate.image = model.find(req.params.id).image;
+        }
+        console.log(userUpdate);
+        model.update(userUpdate);
+        return res.redirect('home');
 	},
 
 	delete : (req, res) => {
-		let tareas = JSON.parse(fs.readFileSync('./data/userDataBase.json', 'utf-8'));
-		tareas = tareas.filter(user => {
-			 return	user.id != req.params.id;					
-		});
-		let TareasUpdate = JSON.stringify(tareas);
-		fs.writeFile('./data/userDataBase.json', TareasUpdate, function(err){
-			if(err){
-				console.log('Ha ocurrido un error al guardar el archivo : '+err.message);
-			}
-			console.log('El archivo fue guardado correctamente');
-			res.redirect('/');
-		});
+
 	}
 };
 
