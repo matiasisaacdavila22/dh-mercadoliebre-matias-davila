@@ -1,5 +1,5 @@
 const { render } = require('ejs');
-const jsonDatabase = require('../model/jsonDataBase');
+const jsonDatabase = require('../model/jsonDatabase.json');
 const model = jsonDatabase('productsDataBase');
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
