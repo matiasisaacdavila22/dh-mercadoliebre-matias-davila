@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
-
 app.use('/', rutasMain);
 app.use('/user', userRouter);
 app.use('/product', productRouter);
