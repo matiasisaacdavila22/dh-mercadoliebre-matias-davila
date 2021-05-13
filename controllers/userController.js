@@ -2,6 +2,7 @@ const { render } = require('ejs');
 const jsonDatabase = require('../model/jsonDataBase');
 const model = jsonDatabase('userDataBase');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 const controller = {
     create: (req, res) => {
         return res.render('user/register');
@@ -15,15 +16,15 @@ const controller = {
 
 	},
 	login: (req, res) => {
-		res.render('user/login');
+		return	res.render('user/login');
 	},
 
 	list: (req, res) => {
-		res.send('list de user');
+		return	res.send('list de user');
 	},
 
 	search: (req, res) => {
-		res.send('search de user');
+		return res.send('search de user');
 	},
 	
 	
