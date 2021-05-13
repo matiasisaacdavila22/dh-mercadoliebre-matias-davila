@@ -1,4 +1,4 @@
-const jsonDatabase = require('../model/jsonDataBase.json');
+const jsonDatabase = require('../model/jsonDataBase');
 const model = jsonDatabase('userDataBase');
 
 const controller = {
